@@ -1,0 +1,34 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css); 
+* {box-sizing: border-box}
+body{margin:0 auto;padding:0;overflow:hidden;font-family:"Nanum Gothic";}
+.mySlides {display: none}
+img {max-width:1000px;vertical-align: middle;}
+
+.container{max-width:1000px;position:relative;margin:auto;}
+
+.blank{width:100%;height:10%;background-color:#fff;text-align: center;}
+.blank img{height: 100%;}
+
+.wrap{height:80%;}
+
+.logbox{width:100%;height:20%;position:absolute;background-color:#fff;bottom:14%;border-top: 10px solid #B4D2FF;border-bottom:10px solid #428FC8;opacity:0.9;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
+
+.log:nth-child(n+2){display:none;}
+
+.log{padding:5%;font-size:32px;color:#2c2c2c;opacity:1;position:absolute}
+
+.namebox{width:30%;height:7%;background-color:#428FC8;border-radius:100px;position:absolute;bottom:30%;z-index:1;margin:0 2%;border:5px solid white;font-size:2rem;display:none;text-align:center;color:#fff;font-weight:bold}
+
+.namebox p{line-height:100%;}
+
+
+#nextbutton{width:20%;height:20%;top:60%;left:80%;position:absolute}
+
+#nextbutton img{width:60%;opacity:1;}
+
+
+.choice{width:100%;font-size:2rem;top:30%;z-index:100;position:absolute;display: none;}
+
+.choice_wrap{display:flex;justify-content:center;flex-direction:column;}
+
+.answer{width:80%;height:10%;background-color:#fff;margin:3% auto;border-radius: 80px;text-align: center;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border: 5px solid #B4D2FF;opacity: 0.9;}

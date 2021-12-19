@@ -1,0 +1,104 @@
+<html>
+<audio src="positive.mp3" autoplay loop controls id="myAudio">오디오 지원되지 않는 브라우저</audio>
+
+<head>
+    <link rel="stylesheet" href="style3.css">
+    <title>약국에서 살아남기</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="blank"><img src="title.png" alt="logo"></p></div>
+    <div class="wrap">
+        <div id="basic_normal" class="basicpic"><img src="basic.png" ></div>
+        <div id="basic_drug" class="basicpic"><img src="consult.png" ></div>
+        <div id="master_normal" class="basicpic"><img src="masterbase.png" ></div>
+        <div id="customer1" class="basicpic"><img src="customer1.PNG" ></div>
+        <div id="namebox_customer1" class="namebox"><p>손님1</p></div>
+        <div id="namebox_master" class="namebox"><p>국장</p></div>
+        <div id="namebox_basic" class="namebox"><p>ㅇㅇㅇ약사</p></div>
+        <div id="story1" class="choice"> <!--스토리 1번 선택지-->
+            <div class="choice_wrap">
+                <div class="answer" onclick="location.href='testaudio.html'"><p>오늘 스테로이드, 위장보호 약 나왔고요.<br> 아침,저녁으로 하루 2번 식후 복용하세요.</p></div>
+                <div class="answer" onclick="location.href='example_slide2.html'"><p>오늘 소염제,위장 보호약 나왔고요.<br> 아침,저녁으로 하루 2번 식후 복용하세요.</p></div>
+            </div>
+        </div>
+        <div class="logbox">
+            <p class="log">나는 ooo 약사</p><!--로그0-->
+            <p class="log">올해 막 졸업한 신입 약사다.</p><!--로그1-->
+            <p class="log">이번에 약국에 취직했다.</p><!--로그2-->
+            <p class="log">ㅇㅇㅇ약사님~</p><!--로그3-->
+            <p class="log">오늘부터 근무네요.</p><!--로그4-->
+            <p class="log">처음이라 긴장되겠지만 잘해봐요. </p><!--로그5-->
+            <p class="log">네! 열심히 해보겠습니다!</p><!--로그6-->
+            <p class="log">손님1이 약국에 들어와서 피부과 <처방전>을 줬다!!!</p><!--로그7-->
+            <p class="log">ㅇㅇㅇ님~약 나왔습니다~</p><!--로그8-->
+            <p class="log">ㅇㅇㅇ님~약 나왔습니다~</p><!--로그9-->
+
+            <div id="nextbutton"><img src="arrow.png" alt="button"></div>
+        </div>
+    </div>
+    <div class="blank"></div>
+</div>
+
+<script>
+var i = 0;
+var nextButton = document.getElementById("nextbutton");
+var log = document.getElementsByClassName("log");
+var nameboxmaster = document.getElementById("namebox_master");
+var nameboxcustomer1 = document.getElementById("namebox_customer1");
+var nameboxbasic = document.getElementById("namebox_basic");
+var basicNormal = document.getElementById("basic_normal");
+var basicDrug = document.getElementById("basic_drug");
+var masterNormal = document.getElementById("master_normal");
+var customer1Normal = document.getElementById("customer1");
+var story1 = document.getElementById("story1");
+
+nextButton.addEventListener("click", function(){
+i++; //버튼 클릭할 때마다 변수 증가, 변수=로그 번호로 변수 번호에 맞는 로그 보여줌
+console.log(i);
+
+if(i==0 || i==1 || i==2 || i==6){ 
+nameboxbasic.style.display="block"
+basicNormal.style.display="block" 
+} ;
+
+if(i==3 || i==4 || i==5){ 
+nameboxmaster.style.display="block"
+masterNormal.style.display="block"
+nameboxbasic.style.display="none"
+basicNormal.style.display="none" 
+basicDrug.style.display="none" 
+} ;
+
+
+if(i==7){ 
+nameboxcustomer1.style.display="block"
+customer1.style.display="block"
+nameboxbasic.style.display="none"
+basicNormal.style.display="none" 
+nameboxmaster.style.display="none"
+masterNormal.style.display="none"
+basicDrug.style.display="none" 
+} ;
+
+if(i==8){ 
+nameboxbasic.style.display="block"
+basicDrug.style.display="block" 
+} ;
+
+
+var loghidden = log[i-1];
+var logshow = log[i];
+loghidden.style.display="none";
+logshow.style.display="block";
+
+if(i==9){ //선택지에서 next button 숨기기
+    story1.style.display="block";
+    nextButton.style.display="none";
+};
+});
+
+</script>
+</body>
+</html>
