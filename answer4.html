@@ -18,7 +18,7 @@
         </div>
         <div class="logbox">
             <p class="log">우욱.....<br>(토한다.)</p><!--로그0-->
-            <p class="log">처음 화면으로 돌아가기</p><!--로그1-->
+            <p class="log">GAME OVER</p><!--로그1-->
  
             <div id="nextbutton"><img src="arrow.png" alt="button"></div>
         </div>
@@ -40,26 +40,26 @@
         i++; //버튼 클릭할 때마다 변수 증가, 변수=로그 번호로 변수 번호에 맞는 로그 보여줌
         console.log(i);
 
-if(i==0){ 
-nameboxcustomer2.style.display="block"
-badcustomer2.style.display="block" 
-gameover.style.display="none" 
+        if(i==0){ 
+        nameboxcustomer2.style.display="block"
+        badcustomer2.style.display="block" 
+        gameover.style.display="none" 
 
-} ;
-            
-if(i==1){ 
-gameover.style.display="block" 
-nextButton.style.display="none"
-nameboxcustomer2.style.display="none"
-badcustomer2.style.display="none" 
-} ;
-        var loghidden = log[i-1];
-        var logshow = log[i];
-        loghidden.style.display="none";
-        logshow.style.display="block";
+        } ;
+
+        if(i==1){ 
+        gameover.style.display="block" 
+        nextButton.style.display="none"
+        nameboxcustomer2.style.display="none"
+        badcustomer2.style.display="none" 
+        } ;
+                var loghidden = log[i-1];
+                var logshow = log[i];
+                loghidden.style.display="none";
+                logshow.style.display="block";
 
 
-});
+        });
         </script>
     </body>
 </html>
