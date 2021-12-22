@@ -1,0 +1,122 @@
+<html>
+
+<audio src="positive.mp3" autoplay loop controls id="myAudio">오디오 지원되지 않는 브라우저</audio>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.67, user-scalable=no">
+    <link rel="stylesheet" href="style3.css">
+    <title>약국에서 살아남기</title>
+</head>
+
+ <body>
+<div class="container">
+    <div class="blank"><img src="title.png" alt="logo"></p></div>
+    <div class="wrap">
+        <div id="basic_drug" class="basicpic"><img src="consult.png" ></div>
+        <div id="alarmed" class="basicpic"><img src="alarmed.png" ></div>
+        <div id="customer2" class="basicpic"><img src="customer2.png" ></div>
+        <div id="namebox_customer2" class="namebox"><p>손님2</p></div>
+        <div id="namebox_basic" class="namebox"><p>ㅇㅇㅇ약사</p></div>
+        <div id="customer3" class="basicpic"><img src="customer3.png" ></div>
+        <div id="namebox_customer3" class="namebox"><p>손님3</p></div>
+        <div id="story3" class="choice"> <!--스토리 1번 선택지-->
+            <div class="choice_wrap">
+                <div class="answer" onclick="location.href='answer1.html'"><p>그래서 정확한 가격은 모릅니다.</p></div>
+                <div class="answer" onclick="location.href='example_slide2.html'"><p>그래도 한번 봐드리겠습니다.</p></div>
+            </div>
+        </div>
+        <div class="logbox">
+            <p class="log">(돈을 내고 약을 받는다.)<br>꿀꺽꿀꺽..으..살겠다....<br>(떠난다.)</p><!--로그0-->
+            <p class="log">손님3이 약국에 들어와서 안과 처방전을 줬다!!!</p><!--로그1-->
+            <p class="log">ㅇㅇㅇ님~<br>약 두가지 나왔습니다.<br>알러지에 쓰는 점안액은 하루 1번<br>쓰시는 거고요.<br>증상이 없으시면 안 쓰셔도 돼요.</p><!--로그2-->
+            <p class="log">인공눈물은 하루에 수시로 쓰시면 됩니다.<br>만약 알러지약이랑 같이 쓰시면<br>알러지 점안액 먼저 넣은 후, 5분 후 인공눈물 쓰세요.<br>총 10500원 계산해드릴게요.</p><!--로그3-->
+            <p class="log">근데 인공눈물은 얼마예요?</p><!--로그4-->
+            <p class="log">아......</p><!--로그5-->
+            <p class="log">이게 알러지약과 인공눈물 합쳐서 가격 책정된 거라<br>각각의 가격이 나오지 않아요.</p><!--로그6-->
+            <p class="log">이게 알러지약과 인공눈물 합쳐서 가격 책정된 거라<br>각각의 가격이 나오지 않아요.</p><!--로그7-->
+            <div id="nextbutton"><img src="arrow.png" alt="button"></div>
+        </div>
+    </div>
+    <div class="blank"></div>
+</div>
+
+        <script>
+        var i = 0;
+        var nextbutton = document.getElementById("nextbutton");
+        var log = document.getElementsByClassName("log");
+
+        var basicDrug = document.getElementById("basic_drug");
+        var nameboxcustomer2 = document.getElementById("namebox_customer2");
+        var nameboxbasic = document.getElementById("namebox_basic");
+        var alarmed = document.getElementById("alarmed");
+        var customer2 = document.getElementById("customer2");
+        var story3 = document.getElementById("story3");
+        var nameboxcustomer3 = document.getElementById("namebox_customer3");
+        var customer3 = document.getElementById("customer3");
+        
+        nextbutton.addEventListener("click", function(){
+        i++; //버튼 클릭할 때마다 변수 증가, 변수=로그 번호로 변수 번호에 맞는 로그 보여줌
+        console.log(i);
+
+if(i==0){ 
+nameboxcustomer2.style.display="block"
+customer2.style.display="block" 
+
+nameboxbasic.style.display="none"
+alarmed.style.display="none" 
+basicDrug.style.display="none"
+nameboxcustomer3.style.display="none"
+customer3.style.display="none" 
+
+} ;
+
+if(i==1 || i==4){ 
+nameboxcustomer3.style.display="block"
+customer3.style.display="block" 
+
+nameboxbasic.style.display="none"
+alarmed.style.display="none" 
+basicDrug.style.display="none"
+nameboxcustomer2.style.display="none"
+customer2.style.display="none" 
+} ;
+
+if(i==2 || i==3){ 
+nameboxbasic.style.display="block"
+basicDrug.style.display="block" 
+
+alarmed.style.display="none" 
+nameboxcustomer2.style.display="none"
+customer2.style.display="none" 
+nameboxcustomer3.style.display="none"
+customer3.style.display="none" 
+} ;
+
+if(i==5 || i==6){ 
+nameboxbasic.style.display="block"
+alarmed.style.display="block" 
+
+basicDrug.style.display="none" 
+nameboxcustomer2.style.display="none"
+customer2.style.display="none" 
+nameboxcustomer3.style.display="none"
+customer3.style.display="none" 
+} ;
+
+        
+     
+        var loghidden = log[i-1];
+        var logshow = log[i];
+        loghidden.style.display="none";
+        logshow.style.display="block";
+
+if(i==7){ //선택지에서 next button 숨기기
+    story3.style.display="block"
+    nextButton.style.display="none"
+    nameboxbasic.style.display="none"
+    alarmed.style.display="none" 
+};
+});
+        </script>
+    </body>
+</html>
