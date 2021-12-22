@@ -1,0 +1,104 @@
+<html>
+
+<audio src="positive.mp3" autoplay loop controls id="myAudio">오디오 지원되지 않는 브라우저</audio>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.67, user-scalable=no">
+    <link rel="stylesheet" href="style3.css">
+    <title>약국에서 살아남기</title>
+</head>
+
+ <body>
+<div class="container">
+    <div class="blank"><img src="title.png" alt="logo"></p></div>
+    <div class="wrap">
+        <div id="alarmed" class="basicpic"><img src="alarmed.png" ></div>
+        <div id="customer2" class="basicpic"><img src="customer2.png" ></div>
+        <div id="namebox_customer2" class="namebox"><p>손님2</p></div>
+        <div id="namebox_basic" class="namebox"><p>ㅇㅇㅇ약사</p></div>
+        <div id="customer1" class="basicpic"><img src="customer1.png" ></div>
+        <div id="namebox_customer1" class="namebox"><p>손님1</p></div>
+        <div id="story2" class="choice"> <!--스토리 1번 선택지-->
+            <div class="choice_wrap">
+                <div class="answer" onclick="location.href='answer1.html'"><p>(직접 골라 조제 후) <br> 5000원입니다.</p></div>
+                <div class="answer" onclick="location.href='example_slide2.html'"><p>종류가 많은데 어떤 걸로 드리면 될까요? </p></div>
+            </div>
+        </div>
+        <div class="logbox">
+            <p class="log">네. 감사합니다.<br>안녕히 계세요.</p><!--로그0-->
+            <p class="log">으... 술...... </p><!--로그1-->
+            <p class="log">네?? 뭐라고요???</p><!--로그2-->
+            <p class="log">술 깨는 약.......</p><!--로그3-->
+            <p class="log">아......</p><!--로그4-->
+            <p class="log">아......</p><!--로그5-->
+            <div id="nextbutton"><img src="arrow.png" alt="button"></div>
+        </div>
+    </div>
+    <div class="blank"></div>
+</div>
+
+        <script>
+        var i = 0;
+        var nextbutton = document.getElementById("nextbutton");
+        var log = document.getElementsByClassName("log");
+
+        var nameboxcustomer2 = document.getElementById("namebox_customer2");
+        var nameboxbasic = document.getElementById("namebox_basic");
+        var alarmed = document.getElementById("alarmed");
+        var customer2 = document.getElementById("customer2");
+        var story2 = document.getElementById("story2");
+        var nameboxcustomer1 = document.getElementById("namebox_customer1");
+        var customer1Normal = document.getElementById("customer1");
+        
+        nextbutton.addEventListener("click", function(){
+        i++; //버튼 클릭할 때마다 변수 증가, 변수=로그 번호로 변수 번호에 맞는 로그 보여줌
+        console.log(i);
+
+if(i==0){ 
+nameboxcustomer1.style.display="block"
+customer1Normal.style.display="block" 
+
+nameboxbasic.style.display="none"
+nameboxcustomer2.style.display="none"
+alarmed.style.display="none" 
+customer2.style.display="none" 
+
+} ;
+
+if(i==1 || i==3){ 
+nameboxcustomer2.style.display="block"
+customer2.style.display="block" 
+
+nameboxcustomer1.style.display="none"
+customer1Normal.style.display="none" 
+nameboxbasic.style.display="none"
+alarmed.style.display="none" 
+} ;
+
+if(i==2){ 
+nameboxbasic.style.display="block"
+alarmed.style.display="block" 
+
+nameboxcustomer1.style.display="none"
+customer1Normal.style.display="none" 
+nameboxcustomer2.style.display="none"
+customer2.style.display="none" 
+} ;
+
+        
+     
+        var loghidden = log[i-1];
+        var logshow = log[i];
+        loghidden.style.display="none";
+        logshow.style.display="block";
+
+if(i==5){ //선택지에서 next button 숨기기
+    story2.style.display="block"
+    nextButton.style.display="none"
+    nameboxcustomer2.style.display="none"
+    customer2.style.display="none"
+};
+});
+        </script>
+    </body>
+</html>
