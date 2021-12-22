@@ -21,7 +21,7 @@
         <div id="namebox_basic" class="namebox"><p>ㅇㅇㅇ약사</p></div>
         <div id="story1" class="choice"> <!--스토리 1번 선택지-->
             <div class="choice_wrap">
-                <div class="answer" onclick="location.href='answer1.html'"><p>오늘 스테로이드, 위장보호 약 나왔고요.<br> 아침,저녁으로 하루 2번 식후 복용하세요.</p></div>
+                <div class="answer" onclick="location.href='testaudio.html'"><p>오늘 스테로이드, 위장보호 약 나왔고요.<br> 아침,저녁으로 하루 2번 식후 복용하세요.</p></div>
                 <div class="answer" onclick="location.href='example_slide2.html'"><p>오늘 소염제,위장 보호약 나왔고요.<br> 아침,저녁으로 하루 2번 식후 복용하세요.</p></div>
             </div>
         </div>
@@ -63,44 +63,46 @@ console.log(i);
 if(i==0){ 
 nameboxbasic.style.display="block"
 basicNormal.style.display="block" 
-}else{
-      nameboxbasic.style.display="none"
-      basicNormal.style.display="none" 
-};
+masterNormal.style.display="none" 
+basicDrug.style.display="none"
+customer1Normal.style.display="none" 
+} ;
 
 if(i==1 || i==2){ 
 nameboxbasic.style.display="block"
 basicNormal.style.display="block" 
-}else{
-      nameboxbasic.style.display="none"
-      basicNormal.style.display="none" 
-};
+masterNormal.style.display="none" 
+basicDrug.style.display="none"
+customer1Normal.style.display="none" 
+} ;
     
 if(i==6){ 
 nameboxbasic.style.display="block"
 basicNormal.style.display="block" 
-}else{
-      nameboxbasic.style.display="none"
-      basicNormal.style.display="none" 
-};
+masterNormal.style.display="none" 
+basicDrug.style.display="none"
+customer1Normal.style.display="none" 
+} ;
 
 if(i==3 || i==4 || i==5){ 
 nameboxmaster.style.display="block"
 masterNormal.style.display="block"
-}else{
-      nameboxmaster.style.display="none"
-      masterNormal.style.display="none"
-};
+nameboxbasic.style.display="none"
+basicNormal.style.display="none" 
+basicDrug.style.display="none" 
+customer1Normal.style.display="none" 
+} ;
 
 
 if(i==7){ 
 nameboxcustomer1.style.display="block"
 customer1.style.display="block"
-}else{
-      nameboxcustomer1.style.display="none"
-      customer1.style.display="none"
-};
-
+nameboxbasic.style.display="none"
+basicNormal.style.display="none" 
+nameboxmaster.style.display="none"
+masterNormal.style.display="none"
+basicDrug.style.display="none" 
+} ;
 
 if(i==8){ 
 nameboxbasic.style.display="block"
