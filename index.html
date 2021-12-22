@@ -59,8 +59,24 @@ var story1 = document.getElementById("story1");
 nextButton.addEventListener("click", function(){
 i++; //버튼 클릭할 때마다 변수 증가, 변수=로그 번호로 변수 번호에 맞는 로그 보여줌
 console.log(i);
+    
+if(i==0){ 
+nameboxbasic.style.display="block"
+basicNormal.style.display="block" 
+masterNormal.style.display="none" 
+basicDrug.style.display="none"
+customer1Normal.style.display="none" 
+} ;
 
-if(i==0 || i==1 || i==2 || i==6){ 
+if(i==1 || i==2){ 
+nameboxbasic.style.display="block"
+basicNormal.style.display="block" 
+masterNormal.style.display="none" 
+basicDrug.style.display="none"
+customer1Normal.style.display="none" 
+} ;
+    
+if(i==6){ 
 nameboxbasic.style.display="block"
 basicNormal.style.display="block" 
 masterNormal.style.display="none" 
@@ -90,7 +106,13 @@ basicDrug.style.display="none"
 
 if(i==8){ 
 nameboxbasic.style.display="block"
-basicDrug.style.display="block" 
+basicDrug.style.display="block"
+nameboxcustomer1.style.display="none"
+customer1.style.display="none"
+basicNormal.style.display="none" 
+nameboxmaster.style.display="none"
+masterNormal.style.display="none"
+basicDrug.style.display="none" 
 } ;
 
 
@@ -100,8 +122,10 @@ loghidden.style.display="none";
 logshow.style.display="block";
 
 if(i==9){ //선택지에서 next button 숨기기
-    story1.style.display="block";
-    nextButton.style.display="none";
+    story1.style.display="block"
+    nextButton.style.display="none"
+    nameboxcustomer1.style.display="none"
+    customer1.style.display="none"
 };
 });
 
