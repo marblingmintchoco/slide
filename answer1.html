@@ -5,72 +5,84 @@
     <link rel="stylesheet" href="style3.css">
     <title>약국에서 살아남기</title>
 </head>
-    <body>
-        <div class="container">
-            <div class="blank"><img src="title.png" alt="logo"></p></div>
-            <div class="wrap">
-                <div id="badcustomer1" class="basicpic"><img src="badcustomer1.png" ></div>
-                <div id="badmaster" class="basicpic"><img src="badmaster.png" ></div>
-                <div id="gameover" class="basicpic"><img src="gameover.png" ></div>
-                <div id="namebox_customer1" class="namebox"><p>손님1</p></div>
-                <div id="namebox_master" class="namebox"><p>국장</p></div>
-                <div id="namebox_basic" class="namebox"><p>ㅇㅇㅇ약사</p></div>
-              
-                <div class="logbox">
-                    <p class="log">스테로이드요? 그거 안 좋은 거 아니예요? <br><br> 손님1이 가버렸다.</p><!--로그0-->
-                    <p class="log">ㅇㅇㅇ약사님.... 스테로이드가 맞지만, 스테로이드라고 말하면 환자들이 싫어해요.</p><!--로그1-->
-                    <p class="log">GAME OVER</p><!--로그2-->
-                
-                    <div id="nextbutton"><img src="arrow.png" alt="button"></div>
+<body>
+    <div class="container">
+        <div class="blank"><img src="title.png" alt="logo"></p></div>
+        <div class="wrap">
+            <div id="badcustomer1" class="basicpic"><img src="badcustomer1.png" ></div>
+            <div id="badmaster" class="basicpic"><img src="badmaster.png" ></div>
+            <div id="gameover" class="basicpic"><img src="gameover.png" ></div>
+            <div id="namebox_customer1" class="namebox"><p>손님1</p></div>
+            <div id="namebox_master" class="namebox"><p>국장</p></div>
+            <div id="story0" class="choice"> <!--스토리 1번 선택지-->
+                <div class="choice_wrap">
+                    <div class="answer" onclick="index.html'"><p>처음으로 돌아가기</p></div>
                 </div>
             </div>
-            <div class="blank"></div>
+            <div class="logbox">
+                <p class="log">스테로이드요? 그거 안 좋은 거 아니예요? <br><br> 손님1이 가버렸다.</p><!--로그0-->
+                <p class="log">ㅇㅇㅇ약사님.... 스테로이드가 맞지만, 스테로이드라고 말하면 환자들이 싫어해요.</p><!--로그1-->
+                <p class="log">GAME OVER</p><!--로그2-->
+                <p class="log">GAME OVER</p><!--로그3-->
+                <div id="nextbutton"><img src="arrow.png" alt="button"></div>
+            </div>
         </div>
+        <div class="blank"></div>
+</div>
 
-        <script>
-        var i = 0;
-        var nextbutton = document.getElementById("nextbutton");
-        var log = document.getElementsByClassName("log");
-        var nameboxmaster = document.getElementById("namebox_master");
-        var nameboxcustomer1 = document.getElementById("namebox_customer1");
-        var badcustomer1 = document.getElementById("badcustomer1");
-        var badmaster = document.getElementById("badmaster");
-        var gameover = document.getElementById("gameover");
+<script>
+var i = 0;
+var nextbutton = document.getElementById("nextbutton");
+var log = document.getElementsByClassName("log");
+var nameboxmaster = document.getElementById("namebox_master");
+var nameboxcustomer1 = document.getElementById("namebox_customer1");
+var badcustomer1 = document.getElementById("badcustomer1");
+var badmaster = document.getElementById("badmaster");
+var gameover = document.getElementById("gameover");
 
-        nextbutton.addEventListener("click", function(){
-        i++; //버튼 클릭할 때마다 변수 증가, 변수=로그 번호로 변수 번호에 맞는 로그 보여줌
-        console.log(i);
+nextbutton.addEventListener("click", function(){
+i++; //버튼 클릭할 때마다 변수 증가, 변수=로그 번호로 변수 번호에 맞는 로그 보여줌
+console.log(i);
 
-        if(i==0) { 
-        badcustomer1.style.display="block"
-        nameboxcustomer1.style.display="block"
-        badmaster.style.display="none"
-        nameboxmaster.style.display="none"
-        gameover.style.display="none"
-        };
+if(i==0) { 
+badcustomer1.style.display="block"
+nameboxcustomer1.style.display="block"
+badmaster.style.display="none"
+nameboxmaster.style.display="none"
+gameover.style.display="none"
+}else{
+    badcustomer1.style.display="none"
+    nameboxcustomer1.style.display="none"
+};
         
-        if(i==1){ 
-        badmaster.style.display="block"
-        nameboxmaster.style.display="block"
-        badcustomer1.style.display="none"
-        nameboxcustomer1.style.display="none"
-        gameover.style.display="none"
-        };
+if(i==1){ 
+badmaster.style.display="block"
+nameboxmaster.style.display="block"
+badcustomer1.style.display="none"
+nameboxcustomer1.style.display="none"
+gameover.style.display="none"
+}else{
+    badmaster.style.display="block"
+    nameboxmaster.style.display="none"
+};
         
-        if(i==2){ 
-        gameover.style.display="block"
-        nextButton.style.display="none"
-        }else {
-            gameover.style.display="none"
-        };
+if(i==2){ 
+gameover.style.display="block"
+}else {
+    gameover.style.display="none"
+};
         
-        var loghidden = log[i-1];
-        var logshow = log[i];
-        loghidden.style.display="none";
-        logshow.style.display="block";
+var loghidden = log[i-1];
+var logshow = log[i];
+loghidden.style.display="none";
+logshow.style.display="block";
+    
+if(i==2){ 
+    story0.style.display="block"
+    nextButton.style.display="none"
+};
+});
 
-        
-        });
-        </script>
-    </body>
+</script>
+</body>
 </html>
